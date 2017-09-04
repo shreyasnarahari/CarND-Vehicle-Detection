@@ -1,17 +1,11 @@
-##Writeup Template
-###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
----
-
-**Vehicle Detection Project**
+##**Vehicle Detection Project**
 
 The goals / steps of this project are the following:
 
 * Perform a Histogram of Oriented Gradients (HOG) feature extraction on a labeled training set of images and train a classifier Linear SVM classifier
-* Optionally, you can also apply a color transform and append binned color features, as well as histograms of color, to your HOG feature vector. 
-* Note: for those first two steps don't forget to normalize your features and randomize a selection for training and testing.
+* Color transform and append binned color features, as well as histograms of color, to your HOG feature vector. 
 * Implement a sliding-window technique and use your trained classifier to search for vehicles in images.
-* Run your pipeline on a video stream (start with the test_video.mp4 and later implement on full project_video.mp4) and create a heat map of recurring detections frame by frame to reject outliers and follow detected vehicles.
+* Run your pipeline on a video stream and create a heat map of recurring detections frame by frame to reject outliers and follow detected vehicles.
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
@@ -24,7 +18,7 @@ The goals / steps of this project are the following:
 [image7]: ./output_images/Combined_2.jpg
 [image8]: ./output_images/Combined_3.jpg
 [image9]: ./output_images/Combined_4.jpg
-[image10]: ./output_images/Combines_5.jpg
+[image10]: ./output_images/Combined_5.jpg
 
 ##Rubric Points
 ###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -86,19 +80,14 @@ Here is an example of HOG extraction on an image.
 
 ####2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
+All the channels of HSV were used and also both the histogram and spatial binning were used.
+
 Here are some example of some images.
 
 ![alt text][image5]
 
 ![alt text][image6]
 
-![alt text][image7]
-
-![alt text][image8]
-
-![alt text][image9]
-
-![alt text][image10]
 
 ---
 
@@ -118,11 +107,21 @@ Here's an example's of all the test images given :
 
 ![alt text][image6]
 
+![alt text][image7]
+
+![alt text][image8]
+
+![alt text][image9]
+
+![alt text][image10]
+
 ---
 
 ###Discussion
 
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+One of the main problems is the this pipeline is difficult to use in real time as it takes a lot of processing to get the output. Other aspect is that we have not trained to detect oncoming vehicles. and also we have other moving objects on or near the road such as motorcycles and pedestrians.
+
+Using Neural Networks (Such as YOLO or SSD) for object detection can be very useful as it can run real time and also detect more objects.
 
